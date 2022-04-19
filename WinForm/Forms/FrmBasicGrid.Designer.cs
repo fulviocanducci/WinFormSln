@@ -29,50 +29,37 @@ namespace WinForm.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.TId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.GridPeople = new System.Windows.Forms.DataGridView();
             this.TxtFilter = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnFilter = new System.Windows.Forms.Button();
             this.BtnEnd = new System.Windows.Forms.Button();
             this.BtnNew = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.TUpdate = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.TName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.GridPeople)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // GridPeople
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TId,
+            this.GridPeople.AllowUserToAddRows = false;
+            this.GridPeople.AllowUserToDeleteRows = false;
+            this.GridPeople.AllowUserToResizeColumns = false;
+            this.GridPeople.AllowUserToResizeRows = false;
+            this.GridPeople.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.GridPeople.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.GridPeople.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TUpdate,
             this.TName});
-            this.dataGridView1.Location = new System.Drawing.Point(8, 55);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(716, 380);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // TId
-            // 
-            this.TId.DataPropertyName = "Id";
-            this.TId.HeaderText = "Id";
-            this.TId.Name = "TId";
-            this.TId.ReadOnly = true;
-            // 
-            // TName
-            // 
-            this.TName.DataPropertyName = "Name";
-            this.TName.HeaderText = "Name";
-            this.TName.Name = "TName";
-            this.TName.ReadOnly = true;
-            this.TName.Width = 550;
+            this.GridPeople.Location = new System.Drawing.Point(8, 55);
+            this.GridPeople.Name = "GridPeople";
+            this.GridPeople.ReadOnly = true;
+            this.GridPeople.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.GridPeople.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GridPeople.Size = new System.Drawing.Size(716, 380);
+            this.GridPeople.TabIndex = 0;
+            this.GridPeople.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridPeople_CellClick);
             // 
             // TxtFilter
             // 
@@ -119,6 +106,25 @@ namespace WinForm.Forms
             this.BtnNew.UseVisualStyleBackColor = true;
             this.BtnNew.Click += new System.EventHandler(this.BtnNew_Click);
             // 
+            // TUpdate
+            // 
+            this.TUpdate.DataPropertyName = "Id";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Format = "0000000000";
+            this.TUpdate.DefaultCellStyle = dataGridViewCellStyle2;
+            this.TUpdate.HeaderText = "...";
+            this.TUpdate.Name = "TUpdate";
+            this.TUpdate.ReadOnly = true;
+            this.TUpdate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // TName
+            // 
+            this.TName.DataPropertyName = "Name";
+            this.TName.HeaderText = "Name";
+            this.TName.Name = "TName";
+            this.TName.ReadOnly = true;
+            this.TName.Width = 550;
+            // 
             // FrmBasicGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -129,14 +135,15 @@ namespace WinForm.Forms
             this.Controls.Add(this.BtnFilter);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TxtFilter);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.GridPeople);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmBasicGrid";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Basic Grid";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FrmBasicGrid_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.GridPeople)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,13 +151,13 @@ namespace WinForm.Forms
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TName;
+        private System.Windows.Forms.DataGridView GridPeople;
         private System.Windows.Forms.TextBox TxtFilter;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnFilter;
         private System.Windows.Forms.Button BtnEnd;
         private System.Windows.Forms.Button BtnNew;
+        private System.Windows.Forms.DataGridViewLinkColumn TUpdate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TName;
     }
 }

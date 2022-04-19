@@ -15,7 +15,7 @@ namespace WinForm.Components
         public event OnButtonEnd OnButtonEndEvent;
 
         public People People { get; private set; }
-        public PeopleValidator PeopleValidator { get; }
+        public PeopleValidator PeopleValidator { get; private set; }
 
         public CrudControl()
         {
@@ -25,11 +25,9 @@ namespace WinForm.Components
             InitialValues(People);
         }
 
-        public CrudControl(People people)
+        public void SetModel(People people)
         {
-            InitializeComponent();
             People = people;
-            PeopleValidator = new PeopleValidator();
             InitialValues(People);
         }
 
@@ -41,6 +39,7 @@ namespace WinForm.Components
             TxtSalary.Text = "0,00";
             MskCreatedAt.Text = "";
             ChkActive.Checked = true;
+            BtnAction.Text = "Inserir";
             if (people.Id > 0)
             {
                 TxtId.Text = people.Id.ToString();
@@ -51,6 +50,7 @@ namespace WinForm.Components
                     MskCreatedAt.Text = people.CreatedAt.Value.ToString("dd/MM/yyyy");
                 }
                 ChkActive.Checked = people.Active;
+                BtnAction.Text = "Salvar";
             }
         }
 
@@ -70,9 +70,9 @@ namespace WinForm.Components
             if (DateTime.TryParse(MskCreatedAt.Text, out DateTime resultCreatedAt))
             {
                 People.CreatedAt = resultCreatedAt;
-            }            
-            People.Active = ChkActive.Checked;            
-            ValidationResult result = PeopleValidator.Validate(People);            
+            }
+            People.Active = ChkActive.Checked;
+            ValidationResult result = PeopleValidator.Validate(People);
             if (result.IsValid)
             {
                 OnButtonActionEvent(People);

@@ -30,16 +30,16 @@ namespace WinForm.Components
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.TxtId = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.TxtName = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.TxtSalary = new System.Windows.Forms.TextBox();
-            this.MskCreatedAt = new System.Windows.Forms.MaskedTextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.ChkActive = new System.Windows.Forms.CheckBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.MskCreatedAt = new System.Windows.Forms.MaskedTextBox();
+            this.TxtSalary = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.TxtName = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TxtId = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.BtnAction = new System.Windows.Forms.Button();
             this.BtnEnd = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -63,71 +63,15 @@ namespace WinForm.Components
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // label1
+            // ChkActive
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(16, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "&Id";
-            // 
-            // TxtId
-            // 
-            this.TxtId.Location = new System.Drawing.Point(10, 36);
-            this.TxtId.Name = "TxtId";
-            this.TxtId.Size = new System.Drawing.Size(84, 20);
-            this.TxtId.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 61);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "&Nome Completo";
-            // 
-            // TxtName
-            // 
-            this.TxtName.Location = new System.Drawing.Point(10, 77);
-            this.TxtName.Name = "TxtName";
-            this.TxtName.Size = new System.Drawing.Size(324, 20);
-            this.TxtName.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(337, 61);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "&Salário";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(443, 61);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "&Cadastro";
-            // 
-            // TxtSalary
-            // 
-            this.TxtSalary.Location = new System.Drawing.Point(340, 77);
-            this.TxtSalary.Name = "TxtSalary";
-            this.TxtSalary.Size = new System.Drawing.Size(100, 20);
-            this.TxtSalary.TabIndex = 5;
-            // 
-            // MskCreatedAt
-            // 
-            this.MskCreatedAt.Location = new System.Drawing.Point(446, 77);
-            this.MskCreatedAt.Mask = "00/00/0000";
-            this.MskCreatedAt.Name = "MskCreatedAt";
-            this.MskCreatedAt.Size = new System.Drawing.Size(100, 20);
-            this.MskCreatedAt.TabIndex = 7;
-            this.MskCreatedAt.ValidatingType = typeof(System.DateTime);
+            this.ChkActive.AutoSize = true;
+            this.ChkActive.Location = new System.Drawing.Point(13, 123);
+            this.ChkActive.Name = "ChkActive";
+            this.ChkActive.Size = new System.Drawing.Size(50, 17);
+            this.ChkActive.TabIndex = 9;
+            this.ChkActive.Text = "Ativo";
+            this.ChkActive.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -138,15 +82,74 @@ namespace WinForm.Components
             this.label5.TabIndex = 8;
             this.label5.Text = "&Ativo";
             // 
-            // ChkActive
+            // MskCreatedAt
             // 
-            this.ChkActive.AutoSize = true;
-            this.ChkActive.Location = new System.Drawing.Point(13, 123);
-            this.ChkActive.Name = "ChkActive";
-            this.ChkActive.Size = new System.Drawing.Size(50, 17);
-            this.ChkActive.TabIndex = 9;
-            this.ChkActive.Text = "Ativo";
-            this.ChkActive.UseVisualStyleBackColor = true;
+            this.MskCreatedAt.Location = new System.Drawing.Point(446, 77);
+            this.MskCreatedAt.Mask = "00/00/0000";
+            this.MskCreatedAt.Name = "MskCreatedAt";
+            this.MskCreatedAt.Size = new System.Drawing.Size(100, 20);
+            this.MskCreatedAt.TabIndex = 7;
+            this.MskCreatedAt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.MskCreatedAt.ValidatingType = typeof(System.DateTime);
+            // 
+            // TxtSalary
+            // 
+            this.TxtSalary.Location = new System.Drawing.Point(340, 77);
+            this.TxtSalary.Name = "TxtSalary";
+            this.TxtSalary.Size = new System.Drawing.Size(100, 20);
+            this.TxtSalary.TabIndex = 5;
+            this.TxtSalary.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(443, 61);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "&Cadastro";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(337, 61);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(39, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "&Salário";
+            // 
+            // TxtName
+            // 
+            this.TxtName.Location = new System.Drawing.Point(10, 77);
+            this.TxtName.Name = "TxtName";
+            this.TxtName.Size = new System.Drawing.Size(324, 20);
+            this.TxtName.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(10, 61);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "&Nome Completo";
+            // 
+            // TxtId
+            // 
+            this.TxtId.Location = new System.Drawing.Point(10, 36);
+            this.TxtId.Name = "TxtId";
+            this.TxtId.Size = new System.Drawing.Size(84, 20);
+            this.TxtId.TabIndex = 1;
+            this.TxtId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(16, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "&Id";
             // 
             // BtnAction
             // 
